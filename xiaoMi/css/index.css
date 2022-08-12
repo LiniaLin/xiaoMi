@@ -33,7 +33,7 @@
 .appDownload:hover .qrCode,
 .appDownload:hover::before {
   display: block;
-  height: 148px;
+  /* height: 148px; */
 }
 /* 设置小三角 */
 .appDownload::before,
@@ -45,23 +45,23 @@
   left: 15px;
   top: 18px;
   content: " ";
-  border: 8px solid transparent;
+  border: 9px solid transparent;
   border-top: none;
   border-bottom-color: white;
   z-index: 1;
 }
 /* 设置qrCode */
 .appDownload .qrCode {
-  /* display: none; */
+  display: none;
   /*因为这个qrcode溢出了，所以会撑开行宽  */
   position: absolute;
   left: -40px;
   width: 124px;
   height: 148px;
   /* 设置过渡效果 */
-  height: 0;
+  /* height: 0;
   overflow: hidden;
-  transition: height 0.5s;
+  transition: height 0.5s; */
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   /* 因为继承了父元素的line-height导致文字下移，设置成1，使得文字line-height变小 */
@@ -90,7 +90,7 @@
 .shop-cart a {
   height: 20px;
   width: 55px;
-  line-height: 1px;
+  /* line-height: 1px; */
   padding: 14px 14px 12px 14px;
   /* padding-bottom: none;
   padding-left: none; */
@@ -108,19 +108,26 @@
 }
 /* set up shopping-cart-list */
 .shop-cart .shopCart-list {
+  /* display: none; */
   position: absolute;
-  height: 100px;
+  /* height: 100px; */
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s;
   width: 320px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
+  background-color: white;
   left: -215px;
 }
 .shopCart-list span {
+  display: block;
   color: #606060;
   font-size: 14px;
-}
-.shopCart-list span {
   text-align: center;
+}
+.shop-cart:hover .shopCart-list {
+  display: block;
+  height: 100px;
 }
 /* user-info */
 .user-info {
