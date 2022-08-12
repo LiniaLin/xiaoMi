@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style type="text/css">
+    #box1 {
+      height: 100px;
+      width: 100px;
+      background-color: #9fb8ad;
+      position: absolute;
+    }
+  </style>
+  <script type="text/javascript">
+    window.onload = function () {
+      //
+      var box1 = document.getElementById("box1");
+      var speed = 10;
+      var dir;
+      var timer;
+      clearInterval(timer);
+
+      timer = setInterval(() => {
+        switch (dir) {
+          case "ArrowUp":
+            //console.log("up");
+            box1.style.top = box1.offsetTop - speed + "px";
+
+            break;
+          case "ArrowDown":
+            //console.log("down");
+            box1.style.top = box1.offsetTop + speed + "px";
+
+            break;
+          case "ArrowLeft":
+            //console.log("left");
+            box1.style.left = box1.offsetLeft - speed + "px";
+            break;
+          case "ArrowRight":
+            //console.log("right");
+            box1.style.left = box1.offsetLeft + speed + "px";
+            break;
+          default:
+          //console.log("start");
+        }
+      }, 30);
+      document.onkeydown = function (event) {
+        //按下ctrl的时候jiasu
+        if (event.ctrlKey) speed = 50;
+        //松开恢复速度
+        else speed = 10;
+        dir = event.key;
+        //console.log(event.key);
+      };
+      //按键松开时，不再move
+      document.onkeyup = function () {
+        dir = 0;
+      };
+    };
+  </script>
+
+  <body>
+    <div id="box1"></div>
+  </body>
+</html>

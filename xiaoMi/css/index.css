@@ -1,0 +1,128 @@
+.top-bar-warpper {
+  /* 设置宽度全屏 */
+  width: 100%;
+  /* 设置水平排列 */
+  height: 40px;
+  line-height: 40px;
+  background-color: #333;
+}
+
+.top-bar a {
+  font-size: 12px;
+  color: #b0b0b0;
+  text-decoration: none;
+}
+.top-bar a:hover {
+  color: white;
+}
+/* 分割线 */
+.top-bar .line {
+  font-size: 12px;
+  color: #424242;
+  margin: 0 8px;
+}
+/* 使导航栏整体浮动 */
+.services,
+.top-bar li {
+  float: left;
+}
+
+.appDownload {
+  position: relative;
+}
+.appDownload:hover .qrCode,
+.appDownload:hover::before {
+  display: block;
+  height: 148px;
+}
+/* 设置小三角 */
+.appDownload::before,
+.appDownload::after {
+  display: none;
+  /* height: 0;
+  overflow: hidden; */
+  position: absolute;
+  left: 15px;
+  top: 18px;
+  content: " ";
+  border: 8px solid transparent;
+  border-top: none;
+  border-bottom-color: white;
+  z-index: 1;
+}
+/* 设置qrCode */
+.appDownload .qrCode {
+  /* display: none; */
+  /*因为这个qrcode溢出了，所以会撑开行宽  */
+  position: absolute;
+  left: -40px;
+  width: 124px;
+  height: 148px;
+  /* 设置过渡效果 */
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  /* 因为继承了父元素的line-height导致文字下移，设置成1，使得文字line-height变小 */
+  line-height: 1px;
+  text-align: center;
+}
+.appDownload .qrCode img {
+  width: 90px;
+  /* text-align: center; */
+  /* 因为img不属于行内元素所以无法用text-align局中只能用margin */
+  margin: 17px;
+
+  /* padding: 20px; */
+}
+.appDownload .qrCode span {
+  color: #000;
+  font-size: 14px;
+}
+/* left nav */
+.shop-cart,
+.user-info {
+  float: right;
+  position: relative;
+}
+/* shopping cart */
+.shop-cart a {
+  height: 20px;
+  width: 55px;
+  line-height: 1px;
+  padding: 14px 14px 12px 14px;
+  /* padding-bottom: none;
+  padding-left: none; */
+  background-color: #424242;
+  text-align: center;
+}
+/* .shop-cart a:hover { */
+/* 不能给a绑定必须是给一个公共元素 */
+.shop-cart:hover a {
+  background-color: white;
+  color: #ff6700;
+}
+.shop-cart i {
+  padding: 5px;
+}
+/* set up shopping-cart-list */
+.shop-cart .shopCart-list {
+  position: absolute;
+  height: 100px;
+  width: 320px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  left: -215px;
+}
+.shopCart-list span {
+  color: #606060;
+  font-size: 14px;
+}
+.shopCart-list span {
+  text-align: center;
+}
+/* user-info */
+.user-info {
+  margin: auto 25px auto auto;
+}

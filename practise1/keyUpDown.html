@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      #box1 {
+        height: 100px;
+        width: 100px;
+        background-color: #9fb8ad;
+      }
+    </style>
+    <script type="text/javascript">
+      window.onload = function () {
+        // var box1 = document.getElementById("box1");
+        var box1 = document.getElementsByTagName("input")[0];
+        box1.onkeydown = function (event) {
+          console.log(event.key);
+          return false;
+        };
+        box1.onkeyup = function () {
+          console.log("I loost");
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <input id="box1" />
+  </body>
+</html>

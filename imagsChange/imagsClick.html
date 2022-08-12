@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #outer {
+        width: 280px;
+        margin: 50px auto;
+        background-color: #9fb8ad;
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+    <script type="text/javascript">
+      window.onload = function () {
+        function btnFunc(btn, func) {
+          var btn = document.getElementById(btn);
+          btn.onclick = func;
+        }
+        // var prevBtn = document.getElementById("prevBtn");
+        // var nextBtn = document.getElementById("nextBtn");
+        var imgs = document.getElementById("imgs");
+        var text1 = document.getElementById("text1");
+        var index = 0;
+        const max = 5,
+          min = 0;
+        text1.innerHTML =
+          "Here are " + max + " pics intotal, next is " + (index + 1);
+        btnFunc("prevBtn", function () {
+          index--;
+          if (index == 0) {
+            index = max;
+          }
+          text1.innerHTML =
+            "Here are " + max + " pics intotal, next is " + index;
+
+          imgs.setAttribute("src", `./imgs/${index}.jpg`);
+        });
+        btnFunc("nextBtn", function () {
+          if (index == max) index = min;
+          index++;
+          text1.innerHTML =
+            "Here are " + max + " pics intotal, next is " + index;
+
+          imgs.setAttribute("src", `./imgs/${index}.jpg`);
+        });
+      };
+      // prevBtn.onclick = function () {
+      //   index--;
+      //   if (index == 0) {
+      //     index = max;
+      //   }
+      //   text1.innerHTML =
+      //     "Here are " + max + "pics intotal, next is " + index;
+
+      //   imgs.setAttribute("src", `./imgs/${index}.jpg`);
+      // };
+      //     nextBtn.onclick = function () {
+      //       if (index == max) index = min;
+      //       index++;
+      //       text1.innerHTML =
+      //         "Here are " + max + "pics intotal, next is " + index;
+
+      //       imgs.setAttribute("src", `./imgs/${index}.jpg`);
+      //     };
+      //   };
+    </script>
+  </head>
+  <body>
+    <div id="outer">
+      <h1 id="text1"></h1>
+      <img id="imgs" src="./imgs/1.jpg" />
+      <button id="prevBtn" classname="prevBtn">Prev</button>
+      <button id="nextBtn" classname="nextBtn">Next</button>
+    </div>
+  </body>
+</html>

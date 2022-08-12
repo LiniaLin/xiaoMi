@@ -1,0 +1,21 @@
+/* 公共样式 */
+.clearfix::after,
+.clearfix::before {
+  content: "";
+  display: table;
+  clear: both;
+}
+body {
+  font: 14px/1.5 Helvetica Neue, Helvetica, Ar ial, Microsoft Yahei,
+    Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  color: #333;
+  /* 设置一个最小值防止内容溢出 */
+  min-width: 1226px;
+}
+/* 设置一个类，用来表示中甲容器的宽度 */
+.w {
+  /* 固定容器的宽度 */
+  width: 1226px;
+  /* 设置容器局中 */
+  margin: 0 auto;
+}

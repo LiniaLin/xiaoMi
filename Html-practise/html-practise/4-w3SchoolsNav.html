@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./html-helper/reset.css">
+<style>
+   body{
+      background-color: white;
+    }
+    a{
+        text-decoration: none;
+        font-size: 20PX;
+        /* 让a变成块元素，就可以继承height和width */
+        display: block;
+        color: #777777;
+        /* 给a设置padding然后再在a：hover中设置background-color可以使得页面更好看 */
+        padding: 0 39.5px;
+        
+        
+    }
+    a:hover{
+        color: white;
+        /* line-height: 48px; */
+        background-color:gray;
+    }
+    .topNav{
+        width: 1200px;
+        height: 48px;
+
+        /* padding-left: 40px; */
+        background-color:#F0EBE3 ;
+        line-height: 48px;
+        margin: 100px auto;
+        
+    }
+     #item{
+        /* margin-top: -2px;  */
+        float: left;
+        /* padding-right: 60px; */
+        background-color:#F0EBE3 ;
+    }
+   
+</style>
+<body>
+    <div class="topNav">
+        <div id="item"><a href="#">HTML/CSS</a></div>
+        <div id="item"><a href="#">Browser Side</a></div>
+        <div id="item"><a href="#">Server Side</a></div>
+        <div id="item"><a href="#">Programming</a></div>
+        <div id="item"><a href="#">XML</a></div>
+        <div id="item"><a href="#">Web Building</a></div>
+        <div id="item"><a href="#">Reference</a></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./html-helper/reset.css">
+    <style>
+        body {
+            background-color: antiquewhite;
+            margin-top: 10px;
+        }
+
+        #wangyi {
+            background-color: white;
+            height: 100%;
+            width: 320px;
+            padding-left: 15px;
+            
+        }
+
+        #title {
+            height: 42px;
+            line-height: 42px;
+            
+            border-top: 1px solid #ddd;
+            font-size: 16px;
+            color: #404040;
+            font-weight: bold;
+            /* text-decoration: none; */
+            /* padding-top: 10px; */
+        }
+        h1{
+            /*-1px是为了让红线覆盖住灰线  */
+            display: inline-block;
+            border-top: 1px solid red;
+            margin-top: -1px;
+        }
+        h2{
+            margin-top: -30px;
+            color: #fff;
+            font-weight: bold;
+            padding-left: 30px;
+        }
+        .right-nav {
+            height: 100%;
+            width: 300px;
+        }
+        .news {
+            margin-top: 30px;
+
+        }
+        /* 通过：：before 为每一个li添加项目符号 */
+        li::before{
+            content: '•   ';
+            color: rgb(218, 218, 218);
+            font-size: 12px;
+        }
+        li {
+            font-size: 14px;
+            height: 30px;
+            /* padding: 0 0 0 15px */
+        }
+
+        a {
+            color: #666666;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #EB1D36
+        }
+  
+    </style>
+</head>
+
+<body>
+    <div id="wangyi">
+        <div id="title">
+            <h1>
+                <a href="https://war.163.com/"> 军事</a><i>·</i>
+                <a href="https://news.163.com/">航空</a>
+            </h1>
+        </div>
+        <div class="right-nav">
+            <a href="https://www.163.com/news/article/HE5E8QLL0001899O.html"><img
+                    src="./pics/ce7c1da8p00rg7y6v0012c000s600e3c.webp">
+                <h2>解放军无人机连续4天进入金门上空</h2>
+            </a>
+            <div class="news">
+                <ul>
+                    <li><a href="#">“只要一声令下，我们一定不辱使命！”</a></li>
+                    <li><a href="#">俄方：80多名外国雇佣兵被打死
+                        </a></li>
+                    <li><a href="#">冰川消融 瑞士1968年失事小飞机残骸“现身”
+                        </a></li>
+                    <li><a href="#">国产大飞机怎样啃动万亿元市场</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+    <script type="text/javascript">
+      function deleteFunc() {
+        var parentTr = this.parentNode.parentNode;
+
+        var result = confirm(
+          "Are you sure to delete " + parentTr.firstElementChild.innerText
+        );
+        if (result) {
+          parentTr.parentNode.removeChild(parentTr);
+        }
+        return false;
+      }
+
+      window.onload = function () {
+        var allA = document.getElementsByTagName("a");
+        for (var i = 0; i < allA.length; i++) {
+          allA[i].onclick = deleteFunc;
+        }
+
+        var staffTable = document.getElementById("staffTable");
+        var staffForm = document.getElementById("staffForm");
+
+        var staffSubmit = document.getElementById("staffSubmit");
+        staffSubmit.onclick = function () {
+          var inputs = document.getElementsByTagName("input");
+          var name = inputs[0].value;
+          var email = inputs[1].value;
+          var salary = inputs[2].value;
+          //alert(name + email + salary);
+
+          var tr = document.createElement("tr");
+
+          // var td1 = document.createElement("td");
+          // var td2 = document.createElement("td");
+          // var td3 = document.createElement("td");
+          // var td4 = document.createElement("td");
+          // var a = document.createElement("a");
+          // a.innerHTML = "Delete";
+          // a.href = "javascript:;";
+          // a.deleteFunc();
+          // td4.appendChild(a);
+          // td1.innerText = name;
+          // tr.appendChild(td1);
+          // td2.innerText = email;
+          // tr.appendChild(td2);
+          // td3.innerText = salary;
+          // tr.appendChild(td3);
+          // td4.append(a);
+
+          tr.innerHTML =
+            "<td>" +
+            name +
+            "</td>" +
+            "<td>" +
+            email +
+            "</td>" +
+            "<td>" +
+            salary +
+            "</td>" +
+            "<td><a href='javascript:;'>Delete</a></td>";
+          var a = tr.getElementsByTagName("a")[0];
+          a.onclick = deleteFunc;
+          staffTable.appendChild(tr);
+          //var tbody=staffTable.getElementsByTagName("tbody")[0]
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <table id="staffTable">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Salary</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>Tom</td>
+        <td>Tom@tom.com</td>
+        <td>5000</td>
+        <td><a href="tom:;">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Jerry</td>
+        <td>Jerry@jerry.com</td>
+        <td>8000</td>
+        <td><a href="jerry">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Bob</td>
+        <td>Bob@bob.com</td>
+        <td>10000</td>
+        <td><a href="bob:;">Delete</a></td>
+      </tr>
+    </table>
+    <!-- <form id="staffForm">
+      <h3>Add a new staff</h3>
+      <label for="fname">Name:</label>
+      <input type="text" id="fname" /><br />
+      <label for="email">Email:</label>
+      <input type="text" id="email" /><br />
+      <label for="salary">Salary:</label>
+      <input type="number" id="salary" /><br />
+      <button id="staffSubmit" type="submit">Submit</button>
+    </form> -->
+    <table id="operator">
+      <tr>
+        <th>添加新员工</th>
+      </tr>
+      <tr>
+        <td>name: <input type="text" name="name" id="name" /></td>
+      </tr>
+      <tr>
+        <td>email: <input type="text" name="email" id="email" /></td>
+      </tr>
+      <tr>
+        <td>salary: <input type="text" name="salary" id="salary" /></td>
+      </tr>
+      <tr>
+        <td>
+          <button id="staffSubmit">提交</button>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

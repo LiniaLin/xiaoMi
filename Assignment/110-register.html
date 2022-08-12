@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      #box1 {
+        height: 500px;
+        width: 200px;
+        overflow: scroll;
+        background-color: #cee5d0;
+      }
+    </style>
+    <script type="text/javascript">
+      window.onload = function () {
+        var box1 = document.getElementById("box1");
+        var infomation = document.getElementById("infomation");
+        var register = document.getElementById("register");
+        box1.onscroll = function () {
+          if (box1.scrollHeight - box1.scrollTop == box1.clientHeight) {
+            infomation.disabled = false;
+            register.disabled = false;
+          }
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Please read the document below</h1>
+    <div id="box1">
+      Please find attached reads like annoying office jargon, so you might
+      wonder whether it’s necessary in an email. The simple answer is no, you do
+      not. First, this phrase is inane, dated and overly formal. You want to
+      keep a natural tone with your recipients – not sound like a character from
+      a George Elliott novel. Second, this phrase is not even proper grammar.
+      There is no reason to make “attached” an adjective when it’s a verb. A
+      clearer, modern alternative might be: “I’m sharing [item] with you.”
+      Third, this phrase is redundant. Your attachment will show up in the
+      email, so there is no need to announce its existence.our attachment will
+      show up in the email, so there is no need to announce its existence.our
+      attachment will show up in the email, so there is no need to announce its
+      existence.our attachment will show up in the email, so there is no need to
+      announce its existence.our attachment will show up in the email, so there
+      is no need to announce its existence.our attachment will show up in the
+      email, so there is no need to announce its existence.our attachment will
+      show up in the email, so there is no need to announce its existence.our
+      attachment will show up in the email, so there is no need to announce its
+      existence.our attachment will show up in the email, so there is no need to
+      announce its existence.
+    </div>
+    <input
+      type="checkbox"
+      id="infomation"
+      disabled="disabled"
+      value="infomation"
+    />
+    <label for="infomation">I already read the infomation above</label>
+    <input type="submit" id="register" value="Register" disabled="disabled" />
+  </body>
+</html>

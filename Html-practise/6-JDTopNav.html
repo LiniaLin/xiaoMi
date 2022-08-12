@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./html-helper/reset.css" />
+    <link rel="stylesheet" href="../fontawesome-free-6.1.2-web/css/all.css" />
+    <style>
+      .clearfix::after,
+      .clearfix::before {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      body {
+        font-size: 12px;
+        font-family: tahoma, arial, "Microsoft YaHei", "Hiragino Sans GB",
+          u5b8bu4f53, sans-serif;
+        background-color: #f1f0f0;
+        /* color: rgb(153, 153, 153);  颜色最好不要在body上设置因为不同字体有不同颜色 */
+      }
+      .outer {
+        width: 100%;
+        line-height: 30px;
+        background-color: rgb(227, 228, 229);
+        border-bottom: 1px solid #ddd;
+      }
+      .inner {
+        width: 1200px;
+        margin: 0 auto;
+      }
+      .location {
+        float: left;
+        color: #999999;
+      }
+      .location:hover {
+        background-color: white;
+        border: 1px solid #999999;
+        border-bottom: none;
+      }
+      .location i {
+        color: #f10215;
+        margin-right: 5px;
+      }
+      .location .cityList {
+        display: none;
+        height: 410px;
+        width: 285px;
+        border: 1px solid #999999;
+        background-color: white;
+
+        position: absolute;
+        /* 给box添加shadow */
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+      }
+      .location:hover .cityList {
+        display: block;
+      }
+      /* 设置current-city 移入效果 15：30(20:00)*/
+
+      .currentCity {
+        /* 背景边距要加在这个上面而不是：honver的时候，否则会有变化 */
+        padding: 0 10px;
+        z-index: 5;
+        position: relative;
+      }
+      .rightNav {
+        float: right;
+      }
+      .rightNav li {
+        float: left;
+        margin-right: 12px;
+      }
+      .rightNav a,
+      .item {
+        padding-right: 5px;
+        float: left;
+        color: rgb(153, 153, 153);
+        text-decoration: none;
+      }
+      .rightNav a:hover {
+        color: #f10215;
+      }
+      .rightNav #register {
+        color: #f30213;
+      }
+      .rightNav .spacer {
+        width: 1px;
+        height: 12px;
+        background-color: #999;
+        margin-top: 10px;
+      }
+      .rightNav .fa-angle-down {
+        color: #999999;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Outside -->
+    <div class="outer">
+      <!-- Inside -->
+      <div class="inner clearfix">
+        <!--左侧菜单  -->
+        <div class="location">
+          <a class="currentCity"
+            ><i class="fa-solid fa-location-dot"></i>Canada</a
+          >
+          <div class="cityList"></div>
+        </div>
+        <!-- 右侧菜单 -->
+        <div class="rightNav clearfix">
+          <ul>
+            <li>
+              <a href="javascript:;">你好，请登录</a>
+              <a id="register" href="javascript:;">免费注册</a>
+            </li>
+            <li class="spacer"></li>
+
+            <li><a href="javascript:;">我的订单</a></li>
+            <li class="spacer"></li>
+
+            <li>
+              <a href="javascript:;">我的京东</a>
+              <i class="fas fa-angle-down"></i>
+            </li>
+            <li class="spacer"></li>
+
+            <li><a href="javascript:;">京东会员</a></li>
+            <li class="spacer"></li>
+
+            <li>
+              <a href="javascript:;">企业采购</a>
+              <i class="fas fa-angle-down"></i>
+            </li>
+            <li class="spacer"></li>
+
+            <li class="item">客户服务<i class="fas fa-angle-down"></i></li>
+            <li class="spacer"></li>
+
+            <li class="item">网站导航<i class="fas fa-angle-down"></i></li>
+            <li class="spacer"></li>
+
+            <li>
+              <a href="javascript:;">手机京东</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

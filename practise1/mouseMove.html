@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      #box1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+    </style>
+    <script type="text/javascript">
+      window.onload = function () {
+        // 当滚轮向下滚动时，box1变长
+        // 当滚轮向上滚动时，box1变短
+        var box1 = document.getElementById("box1");
+        box1.onwheel = function (event) {
+          //判断鼠标滚动方向，用参数event
+          if (box1.clientHeight <= 10) {
+            alert("Scroll to the end");
+            box1.style.height = 20 + "px";
+          }
+          if (event.wheelDelta > 0) {
+            // alert(box1.style.height.style );
+            box1.style.height = box1.clientHeight - 10 + "px";
+          } else {
+            box1.style.height = box1.clientHeight + 10 + "px";
+          }
+
+          //event.wheelDelta 可以获取鼠标滚动方向
+          //当滚轮滚动时，浏览器会随之滚动，要用return false 取消默认行为
+          return false;
+        };
+      };
+    </script>
+  </head>
+  <body style="height: 2000px">
+    <div id="box1"></div>
+  </body>
+</html>

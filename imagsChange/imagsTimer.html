@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script type="text/javascript">
+    window.onload = function () {
+      //在开启一个定时器之前一定要先关闭一个定时器，防止多个定时器嵌套
+      clearInterval(timer);
+      var num = 1,
+        max = 5;
+      var imgs = document.getElementById("imgs");
+
+      var timer = setInterval(() => {
+        imgs.setAttribute("src", `./imgs/${num++}.jpg`);
+        if (num > max) num = 1;
+      }, 1000);
+    };
+  </script>
+  <body>
+    <img id="imgs" src="./imgs/1.jpg" />
+    <button></button>
+  </body>
+</html>
